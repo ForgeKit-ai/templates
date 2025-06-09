@@ -35,7 +35,9 @@
     "eslint": "^8.56.0",
     "@typescript-eslint/eslint-plugin": "^6.15.0",
     "@typescript-eslint/parser": "^6.15.0",
-    "eslint-plugin-vue": "^9.19.2"
+    "eslint-plugin-vue": "^9.19.2",
+    "@vue/eslint-config-typescript": "^12.0.0",
+    "@rushstack/eslint-patch": "^1.6.1"
   },
   "keywords": ["vue", "dashboard", "typescript", "tailwind", "charts"],
   "author": "ForgeKit Template",

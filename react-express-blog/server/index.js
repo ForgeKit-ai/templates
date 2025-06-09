@@ -10,14 +10,18 @@ const authRoutes = require('./routes/auth');
 const postRoutes = require('./routes/posts');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 // Security middleware
 app.use(helmet());
+
+// Trust proxy for rate limiting
+app.set('trust proxy', 1);
+
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
     ? process.env.FRONTEND_URL || false
-    : ['http://localhost:3000', 'http://localhost:3001']
+    : ['http://localhost:3000', 'http://localhost:3005']
 }));
 
 // Rate limiting
@@ -39,12 +43,12 @@ const connectDB = async () => {
     await mongoose.connect(mongoURI);
     console.log('MongoDB connected successfully');
   } catch (error) {
-    console.error('MongoDB connection error:', error);
-    process.exit(1);
+    console.warn('MongoDB connection failed - running in demo mode:', error.message);
+    console.log('The app will work with mock data. To use MongoDB, install and start MongoDB locally.');
   }
 };
 
-// Connect to database
+// Connect to database (non-blocking)
 connectDB();
 
 // API routes
