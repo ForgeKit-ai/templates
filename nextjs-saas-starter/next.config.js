@@ -4,10 +4,19 @@ const nextConfig = {
     serverComponentsExternalPackages: ['@prisma/client'],
   },
   images: {
-    domains: [
-      'lh3.googleusercontent.com', // Google avatars
-      'avatars.githubusercontent.com', // GitHub avatars
-      'images.unsplash.com', // Unsplash images
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'lh3.googleusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
     ],
   },
   env: {
@@ -15,8 +24,6 @@ const nextConfig = {
   },
   // Enable standalone output for Docker
   output: 'standalone',
-  // Optimize for production
-  swcMinify: true,
   // Enable compression
   compress: true,
   // Configure headers for security

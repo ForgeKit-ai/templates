@@ -60,7 +60,29 @@ npm run build
 npm run preview  # Preview the production build locally
 ```
 
-## 🐳 Docker Deployment
+## 🚀 Deployment
+
+### ForgeKit Deployment (Recommended)
+
+This template is optimized for ForgeKit deployment:
+
+1. **Build the project:**
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy with ForgeKit CLI:**
+   ```bash
+   forge deploy
+   ```
+
+The template includes:
+- ✅ **Dockerfile** - Multi-stage build optimized for production
+- ✅ **Nginx Configuration** - Production-ready web server setup
+- ✅ **Health Checks** - Built-in health monitoring
+- ✅ **Security Headers** - Proper security configuration
+
+### Docker Deployment
 
 Build and run with Docker:
 
@@ -130,14 +152,69 @@ src/
 - **Frame Options** - Clickjacking protection
 - **HTTPS Ready** - SSL/TLS ready configuration
 
+## 🔧 ForgeKit Configuration
+
+This template is fully configured for ForgeKit deployment with:
+
+### Docker Configuration
+- **Multi-stage build** for optimized image size
+- **Nginx** web server for static file serving
+- **Health checks** for deployment monitoring
+- **Non-root user** for security compliance
+
+### Environment Variables
+Create a `.env.local` file for local development:
+```env
+# Optional: API endpoints
+VITE_API_URL=https://api.yourapp.com
+
+# Optional: Feature flags
+VITE_ENABLE_ANALYTICS=true
+VITE_ENABLE_DARK_MODE=true
+```
+
+### Deployment Features
+- ✅ **Port 80** - Standard HTTP port for ForgeKit
+- ✅ **Health endpoint** - `/health` for monitoring
+- ✅ **Static assets** - Optimized for CDN delivery
+- ✅ **Gzip compression** - Enabled via Nginx
+- ✅ **Security headers** - CSP, HSTS, and more
+
+## 🌐 Other Deployment Options
+
+### Vercel
+```bash
+npm run build
+# Deploy the dist/ folder to Vercel
+```
+
+### Netlify
+```bash
+npm run build
+# Deploy the dist/ folder to Netlify
+```
+
+### Static Hosting
+The build output in `dist/` can be served by any static hosting provider.
+
 ## 📝 License
 
 MIT License - feel free to use this template for any project!
 
 ## 🤝 Contributing
 
-Feel free to submit issues and enhancement requests!
+This is a ForgeKit template. For issues and improvements:
+- Check the [ForgeKit Documentation](https://forgekit.ai/docs)
+- Submit issues to the ForgeKit repository
+- Join our [Discord Community](https://discord.gg/forgekit)
+
+## 📞 Support
+
+For template support:
+- Check the [ForgeKit Documentation](https://forgekit.ai/docs)
+- Join our [Discord Community](https://discord.gg/forgekit)
+- Contact support at support@forgekit.ai
 
 ---
 
-**Built with ❤️ using Vue 3 and modern web technologies**
+**Built with ❤️ for the ForgeKit community**

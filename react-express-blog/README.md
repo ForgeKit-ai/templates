@@ -63,15 +63,76 @@ PORT=5000
 NODE_ENV=production
 ```
 
-## 🐳 Docker Deployment
+## 🚀 Deployment
 
-The application includes a Dockerfile for easy deployment to any containerized environment including ForgeKit.
+### ForgeKit Deployment (Recommended)
+
+This template is optimized for ForgeKit deployment:
+
+1. **Build the project:**
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy with ForgeKit CLI:**
+   ```bash
+   forge deploy
+   ```
+
+The template includes:
+- ✅ **Dockerfile** - Multi-stage build for React + Express
+- ✅ **Health Checks** - Built-in health monitoring
+- ✅ **Production Build** - Optimized React client build
+- ✅ **Non-root User** - Security compliant containerization
+- ✅ **Signal Handling** - Proper process management with dumb-init
+
+### Environment Variables for ForgeKit
+```env
+# Database (Required)
+MONGODB_URI=mongodb://your-mongodb-host:27017/blog
+
+# Authentication (Required)
+JWT_SECRET=your-jwt-secret-key
+
+# Server Configuration
+PORT=5000
+NODE_ENV=production
+
+# Optional: Upload configuration
+UPLOAD_PATH=/app/uploads
+MAX_FILE_SIZE=5mb
+```
+
+### Docker Deployment
 
 ```bash
 docker build -t react-express-blog .
 docker run -p 5000:5000 react-express-blog
 ```
 
+### Other Platforms
+Deploy to any Node.js hosting platform with MongoDB support like Railway, Render, or Heroku.
+
+## 🔧 ForgeKit Features
+
+This template leverages ForgeKit's capabilities:
+- **Automatic SSL** - HTTPS enabled by default
+- **Custom Domains** - Easy domain configuration
+- **Resource Monitoring** - Built-in performance tracking
+- **Log Management** - Centralized logging and monitoring
+- **Auto-scaling** - Handles traffic spikes automatically
+
 ## 📄 License
 
 MIT License - feel free to use this template for your projects!
+
+## 📞 Support
+
+This is a ForgeKit template. For support:
+- Check the [ForgeKit Documentation](https://forgekit.ai/docs)
+- Join our [Discord Community](https://discord.gg/forgekit)
+- Contact support at support@forgekit.ai
+
+---
+
+**Built with ❤️ for the ForgeKit community**

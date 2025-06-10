@@ -170,7 +170,50 @@ colors: {
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
+### ForgeKit Deployment (Recommended)
+
+This template is optimized for ForgeKit deployment with:
+
+1. **Build the project:**
+   ```bash
+   npm run build
+   ```
+
+2. **Deploy with ForgeKit CLI:**
+   ```bash
+   forge deploy
+   ```
+
+The template includes:
+- ✅ **Dockerfile** - Multi-stage build with Prisma support
+- ✅ **Standalone Output** - Configured in `next.config.js`
+- ✅ **Health Checks** - Built-in health monitoring at `/api/health`
+- ✅ **Security Headers** - Production-ready security configuration
+- ✅ **Database Ready** - Prisma client generation included
+- ✅ **Non-root User** - Security compliant containerization
+
+### Environment Variables for ForgeKit
+```env
+# Database (Required)
+DATABASE_URL="postgresql://username:password@hostname:5432/database"
+
+# NextAuth.js (Required)
+NEXTAUTH_SECRET="your-nextauth-secret"
+NEXTAUTH_URL="https://your-app.forgekit.ai"
+
+# Stripe (Required for billing)
+STRIPE_SECRET_KEY="sk_live_..."
+STRIPE_WEBHOOK_SECRET="whsec_..."
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="pk_live_..."
+
+# OAuth Providers (Optional)
+GOOGLE_CLIENT_ID="your-google-client-id"
+GOOGLE_CLIENT_SECRET="your-google-client-secret"
+GITHUB_CLIENT_ID="your-github-client-id"
+GITHUB_CLIENT_SECRET="your-github-client-secret"
+```
+
+### Vercel
 1. Push code to GitHub
 2. Connect repository to Vercel
 3. Add environment variables
@@ -199,14 +242,27 @@ The app can be deployed to any Node.js hosting platform like Railway, Render, or
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+## 🔧 ForgeKit Integration
+
+This SaaS starter is designed to leverage ForgeKit's full platform:
+- **Automatic SSL** - HTTPS enabled for all deployments
+- **Custom Domains** - Professional domain configuration
+- **Database Hosting** - Managed PostgreSQL available
+- **Stripe Integration** - Optimized for SaaS billing
+- **Resource Monitoring** - Track usage and performance
+- **Auto-scaling** - Handle growth automatically
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🆘 Support
 
-If you have any questions or need help, please open an issue or reach out to the community.
+This is a ForgeKit template. For support:
+- Check the [ForgeKit Documentation](https://forgekit.ai/docs)
+- Join our [Discord Community](https://discord.gg/forgekit)
+- Contact support at support@forgekit.ai
 
 ---
 
-**Happy building!** 🎉
+**Happy building with ForgeKit!** 🎉

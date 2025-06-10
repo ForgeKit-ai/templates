@@ -34,20 +34,20 @@ Modern admin dashboard with charts, data visualization, and responsive design.
 - **Difficulty**: Intermediate
 
 #### 4. **Portfolio Site** (`portfolio-site`)
-Beautiful portfolio website for developers and designers.
+Beautiful, modern portfolio website with stunning animations and responsive design.
 
-- **Tech**: Next.js, Framer Motion, MDX, Tailwind CSS
-- **Features**: Project showcase, blog, contact form, animations
+- **Tech**: Next.js 14, TypeScript, Framer Motion, Tailwind CSS
+- **Features**: Animated hero, project showcase, contact form, dark mode
 - **Category**: Portfolio
 - **Difficulty**: Beginner
 
 #### 5. **E-commerce Store** (`ecommerce-store`)
-Full-featured online store with payment processing and admin panel.
+Modern e-commerce store with beautiful UI and shopping cart functionality.
 
-- **Tech**: Next.js, Stripe, Prisma, NextAuth
-- **Features**: Shopping cart, payments, inventory, orders
+- **Tech**: Next.js 15, TypeScript, Zustand, Framer Motion
+- **Features**: Shopping cart, product catalog, animations, responsive design
 - **Category**: E-commerce
-- **Difficulty**: Advanced
+- **Difficulty**: Intermediate
 
 ## 📁 Template Structure
 
@@ -93,19 +93,26 @@ template-name/
 
 ## 🚀 Quick Start
 
-### Using with ForgeKit CLI
+### Using with ForgeKit CLI (Recommended)
+
+All templates are optimized for ForgeKit deployment with:
+- ✅ **Dockerfile** included and production-ready
+- ✅ **Standalone builds** for efficient containerization  
+- ✅ **Health checks** for deployment monitoring
+- ✅ **Security configuration** with proper headers and user permissions
+- ✅ **Environment variables** properly configured
 
 ```bash
 # Install ForgeKit CLI
 npm install -g @forgekit/cli
 
-# Deploy a template directly
-forge deploy --template react-express-blog
-
-# Or scaffold locally first
-forge create --template nextjs-saas-starter my-saas-app
-cd my-saas-app
+# Clone template and deploy
+git clone https://github.com/forgekit/templates.git
+cd templates/portfolio-site
 forge deploy
+
+# Or directly from template repository
+forge deploy --template nextjs-saas-starter
 ```
 
 ### Manual Setup
